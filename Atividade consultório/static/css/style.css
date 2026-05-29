@@ -1,0 +1,547 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#eef2f7;
+    --white:#ffffff;
+
+    --blue:#2563eb;
+    --blue-dark:#1d4ed8;
+
+    --text:#0f172a;
+    --text-light:#64748b;
+
+    --border:#dbe2ea;
+
+    --green:#22c55e;
+    --red:#ef4444;
+
+    --radius:18px;
+
+}
+
+body{
+
+    font-family:'Plus Jakarta Sans', sans-serif;
+    background:var(--bg);
+    color:var(--text);
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.bg-pattern{
+
+    position:fixed;
+    inset:0;
+
+    background:
+        radial-gradient(circle at top left, rgba(37,99,235,.08), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(34,197,94,.06), transparent 40%);
+
+    z-index:-1;
+
+}
+
+.site-header{
+
+    background:var(--white);
+
+    border-bottom:1px solid var(--border);
+
+    padding:18px 30px;
+
+}
+
+.header-inner{
+
+    max-width:900px;
+    margin:auto;
+
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    text-decoration:none;
+
+}
+
+.logo-mark{
+
+    width:42px;
+    height:42px;
+
+    border-radius:12px;
+
+    background:var(--blue);
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:20px;
+    font-weight:bold;
+
+}
+
+.logo-name{
+
+    font-weight:700;
+    font-size:18px;
+
+}
+
+.logo-tagline{
+
+    color:var(--text-light);
+    font-size:12px;
+
+}
+
+.container{
+
+    width:100%;
+    max-width:900px;
+
+    margin:auto;
+
+    padding:50px 20px;
+
+}
+
+.hero{
+
+    text-align:center;
+    margin-bottom:30px;
+
+}
+
+.hero-title{
+
+    font-family:'Fraunces', serif;
+
+    font-size:48px;
+    font-weight:300;
+
+    margin-bottom:12px;
+
+}
+
+.hero-title em{
+
+    color:var(--blue);
+
+}
+
+.hero-sub{
+
+    color:var(--text-light);
+    line-height:1.6;
+
+}
+
+.card{
+
+    background:var(--white);
+
+    border-radius:var(--radius);
+
+    padding:25px;
+
+    border:1px solid var(--border);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.04);
+
+}
+
+.card-form{
+
+    margin-bottom:25px;
+
+}
+
+.form-row{
+
+    display:flex;
+    gap:14px;
+
+}
+
+.form-grupo{
+
+    flex:1;
+
+}
+
+label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:13px;
+    font-weight:600;
+
+    color:var(--text-light);
+
+}
+
+.input-wrapper{
+
+    position:relative;
+
+}
+
+.input-icon{
+
+    position:absolute;
+
+    left:14px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+}
+
+input{
+
+    width:100%;
+
+    padding:14px 14px 14px 42px;
+
+    border-radius:14px;
+
+    border:1px solid var(--border);
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.2s;
+
+}
+
+input:focus{
+
+    border-color:var(--blue);
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.1);
+
+}
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+button[type="submit"]{
+
+    background:var(--blue);
+
+    color:white;
+
+    padding:14px 24px;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+}
+
+button[type="submit"]:hover{
+
+    background:var(--blue-dark);
+
+}
+
+.loading{
+
+    opacity:.7;
+    pointer-events:none;
+
+}
+
+.sugestoes{
+
+    margin-top:18px;
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+
+    align-items:center;
+
+}
+
+.sugestoes-label{
+
+    font-size:13px;
+    color:var(--text-light);
+
+}
+
+.chip{
+
+    background:#eff6ff;
+
+    color:var(--blue);
+
+    border:1px solid #bfdbfe;
+
+    padding:7px 14px;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+}
+
+.chip:hover{
+
+    background:#dbeafe;
+
+}
+
+.card-erro{
+
+    border-left:5px solid var(--red);
+
+    margin-bottom:20px;
+
+}
+
+.card-erro strong{
+
+    color:var(--red);
+
+}
+
+.resultado-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.resultado-titulo{
+
+    font-size:28px;
+
+}
+
+.resultado-count{
+
+    color:var(--text-light);
+
+}
+
+.resultado-badge{
+
+    background:#ecfdf5;
+
+    color:#059669;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-size:13px;
+    font-weight:600;
+
+}
+
+.medicos-grid{
+
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+
+}
+
+.card-medico{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+}
+
+.card-medico:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.medico-avatar{
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    background:#dbeafe;
+
+    color:var(--blue);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+    font-weight:700;
+
+}
+
+.medico-info{
+
+    flex:1;
+
+}
+
+.medico-nome{
+
+    margin-bottom:6px;
+
+}
+
+.medico-crm{
+
+    color:var(--text-light);
+
+    font-size:13px;
+
+    display:block;
+
+    margin-bottom:10px;
+
+}
+
+.planos-lista{
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+
+}
+
+.plano-tag{
+
+    background:#f8fafc;
+
+    border:1px solid var(--border);
+
+    border-radius:999px;
+
+    padding:5px 10px;
+
+    font-size:12px;
+
+}
+
+.disponivel-dot{
+
+    width:12px;
+    height:12px;
+
+    background:var(--green);
+
+    border-radius:50%;
+
+    display:block;
+
+}
+
+.info-extra{
+
+    margin-top:30px;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+}
+
+.info-extra h3{
+
+    margin-bottom:15px;
+
+}
+
+.info-extra ul{
+
+    padding-left:20px;
+
+    margin-bottom:14px;
+
+}
+
+.info-extra li{
+
+    margin-bottom:6px;
+
+}
+
+.total-especialidades{
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+.site-footer{
+
+    margin-top:auto;
+
+    text-align:center;
+
+    padding:20px;
+
+    color:var(--text-light);
+
+    font-size:13px;
+
+}
+
+@media(max-width:700px){
+
+    .form-row{
+
+        flex-direction:column;
+
+    }
+
+    .hero-title{
+
+        font-size:36px;
+
+    }
+
+}
